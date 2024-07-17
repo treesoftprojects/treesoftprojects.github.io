@@ -9,4 +9,9 @@ document.addEventListener("DOMContentLoaded", function() {
             menuItem[i].className += " active";
         }
     }
+
+    // Redirect mobile users
+    if (/Mobi|Android/i.test(navigator.userAgent)) {
+        window.location.href = "https://treesoftprojects.github.io/m/";
+    }
 });
