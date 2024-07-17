@@ -1,17 +1,15 @@
-// JavaScript can be used for additional interactivity if needed
 document.addEventListener("DOMContentLoaded", function() {
-    // Example: Highlight the active navigation link
-    const currentLocation = location.href;
-    const menuItem = document.querySelectorAll('nav ul li a');
-    const menuLength = menuItem.length;
-    for (let i = 0; i < menuLength; i++) {
-        if (menuItem[i].href === currentLocation) {
-            menuItem[i].className += " active";
-        }
-    }
-
     // Redirect mobile users
     if (/Mobi|Android/i.test(navigator.userAgent)) {
         window.location.href = "https://treesoftprojects.github.io/m/";
     }
+
+    // Create a circle that follows the cursor
+    const circle = document.querySelector('.background-circle');
+    document.addEventListener('mousemove', function(e) {
+        const x = e.clientX;
+        const y = e.clientY;
+        circle.style.left = x + 'px';
+        circle.style.top = y + 'px';
+    });
 });
